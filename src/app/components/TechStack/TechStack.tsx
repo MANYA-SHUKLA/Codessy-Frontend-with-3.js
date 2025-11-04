@@ -137,22 +137,27 @@ export default function TechStack() {
             <motion.h2 
               className={styles.title}
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+              viewport={{ once: true, amount: 0.8 }}
             >
               Divine Technology Stack
             </motion.h2>
             <motion.div 
               className={styles.divider}
               initial={{ width: 0 }}
-              animate={{ width: 100 }}
-              transition={{ duration: 1, delay: 0.3 }}
+              whileInView={{ width: 100 }}
+              transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.8 }}
             />
             <motion.p 
               className={styles.lead}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+              whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
+              viewport={{ once: true, amount: 0.8 }}
             >
               Harnessing the power of modern technologies with the precision of Krishna's Sudarshan Chakra
             </motion.p>
