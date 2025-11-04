@@ -17,7 +17,7 @@ export default function Hero() {
   const ref = useRef(null);
   const [particles, setParticles] = useState<Particle[]>([]);
 
-  // Generate particles only on client side to avoid hydration mismatch
+
   useEffect(() => {
     const generatedParticles: Particle[] = [...Array(15)].map((_, i) => ({
       id: i,
@@ -92,7 +92,7 @@ export default function Hero() {
 
   return (
     <section ref={ref} className={styles.hero}>
-      {/* Animated Background Elements */}
+    
       <motion.div style={{ y }} className={styles.parallaxBackground}>
         <motion.div 
           className={styles.floatingOrb1}
@@ -141,7 +141,7 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        {/* Logo Section */}
+   
         <motion.div
           className={styles.logoSection}
           variants={itemVariants}
@@ -192,7 +192,7 @@ export default function Hero() {
           </motion.p>
         </motion.div>
 
-        {/* Features Grid */}
+      
         <motion.div 
           className={styles.features}
           variants={containerVariants}
@@ -243,7 +243,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* CTA Section */}
+  
         <motion.div
           className={styles.ctaContainer}
           variants={itemVariants}
@@ -270,7 +270,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
+     
         <motion.div
           className={styles.scrollIndicator}
           variants={itemVariants}
@@ -296,7 +296,7 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Floating Particles */}
+
       <div className={styles.floatingParticles}>
         {particles.map((particle) => (
           <motion.div
