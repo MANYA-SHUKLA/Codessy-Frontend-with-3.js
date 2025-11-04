@@ -10,16 +10,16 @@ export function PerformanceMonitor() {
   useFrame(() => {
     frameCount.current++;
     
-    // Limit frame rate to 30fps for background to save performance
+  
     const currentTime = performance.now();
-    if (currentTime - lastTime.current < 33) { // ~30fps
+    if (currentTime - lastTime.current < 33) { 
       return;
     }
     lastTime.current = currentTime;
   });
 
   useEffect(() => {
-    // Enable antialiasing only for high-performance devices
+
     const canvas = gl.domElement;
     const context = canvas.getContext('webgl2') || canvas.getContext('webgl');
     
@@ -28,7 +28,7 @@ export function PerformanceMonitor() {
       if (debugInfo) {
         const renderer = context.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
         
-        // Reduce quality for low-end devices
+
         if (renderer.includes('Intel') || renderer.includes('Integrated')) {
           gl.setPixelRatio(1);
         } else {
