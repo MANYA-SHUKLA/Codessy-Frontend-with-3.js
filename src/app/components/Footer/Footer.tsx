@@ -20,7 +20,7 @@ export default function Footer() {
   const [floatingElements, setFloatingElements] = useState<FloatingElement[]>([]);
   const currentYear = new Date().getFullYear();
 
-  // Generate floating elements only on client side to avoid hydration mismatch
+ 
   useEffect(() => {
     const elements: FloatingElement[] = [...Array(8)].map((_, i) => ({
       id: i,
@@ -130,7 +130,7 @@ export default function Footer() {
           className={styles.content}
           variants={containerVariants}
         >
-          {/* Logo and Description */}
+   
           <motion.div 
             className={styles.brandSection}
             variants={itemVariants}
@@ -178,7 +178,7 @@ export default function Footer() {
             </motion.p>
           </motion.div>
 
-          {/* Quick Links */}
+        
           <motion.div 
             className={styles.linksSection}
             variants={itemVariants}
@@ -220,7 +220,7 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* Contact Info */}
+       
           <motion.div 
             className={styles.contactSection}
             variants={itemVariants}
@@ -269,7 +269,7 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* Services */}
+
           <motion.div 
             className={styles.servicesSection}
             variants={itemVariants}
@@ -312,7 +312,7 @@ export default function Footer() {
           </motion.div>
         </motion.div>
 
-        {/* Bottom Bar */}
+
         <motion.div 
           className={styles.bottomBar}
           variants={containerVariants}
@@ -372,7 +372,7 @@ export default function Footer() {
           </motion.div>
         </motion.div>
 
-        {/* Floating Elements */}
+    
         <div className={styles.floatingElements}>
           {floatingElements.map((element) => (
             <motion.div
