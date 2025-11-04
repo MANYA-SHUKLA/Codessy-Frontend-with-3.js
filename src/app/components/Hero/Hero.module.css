@@ -221,7 +221,7 @@
   opacity: 0;
 }
 
-/* Mobile Responsive Design */
+
 @media (max-width: 768px) {
   .heroContent {
     padding: 0 1rem;
@@ -305,7 +305,7 @@
     height: 1.25rem;
   }
 }
-/* Add to existing Hero.module.css */
+
 
 .scrollLink {
   display: flex;
@@ -349,7 +349,7 @@
   left: 100%;
 }
 
-/* Mobile responsive updates */
+
 @media (max-width: 768px) {
   .ctaButton {
     padding: 1rem 2rem;
