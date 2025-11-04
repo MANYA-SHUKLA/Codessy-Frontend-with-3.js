@@ -19,7 +19,7 @@
     radial-gradient(circle at 80% 70%, rgba(5, 150, 105, 0.15) 0%, transparent 50%);
 }
 
-/* Subtle dark overlay to match Hero visibility and improve contrast */
+
 .mission::after {
   content: '';
   position: absolute;
@@ -37,7 +37,7 @@
   z-index: 1;
 }
 
-/* Subtle backdrop only behind content */
+
 .container::before {
   content: '';
   position: absolute;
@@ -264,7 +264,7 @@
   animation: spin 3s linear infinite;
 }
 
-/* Krishna Section Styles */
+
 .krishnaSection {
   position: relative;
   width: 100%;
@@ -388,7 +388,7 @@
     font-size: 1.5rem;
   }
 }
-/* Add to existing Mission.module.css */
+
 
 .floatingDot1,
 .floatingDot2,
@@ -422,7 +422,7 @@
   background: #10b981;
 }
 
-/* Mobile responsive additions */
+
 @media (max-width: 968px) {
   .floatingDot1,
   .floatingDot2,
