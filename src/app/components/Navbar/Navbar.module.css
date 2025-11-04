@@ -176,7 +176,7 @@
   border-color: rgba(212, 175, 55, 0.5);
 }
 
-/* Mobile Backdrop */
+
 .mobileBackdrop {
   position: fixed;
   top: 0;
@@ -188,7 +188,7 @@
   z-index: 999;
 }
 
-/* Mobile Menu */
+
 .mobileMenu {
   position: fixed;
   top: 0;
@@ -345,7 +345,7 @@
   margin: 0;
 }
 
-/* Mobile Responsive Design */
+
 @media (max-width: 768px) {
   .desktopNav,
   .ctaContainer {
@@ -390,7 +390,7 @@
   }
 }
 
-/* Reduced motion support */
+
 @media (prefers-reduced-motion: reduce) {
   .fluteIcon,
   .logoText,
