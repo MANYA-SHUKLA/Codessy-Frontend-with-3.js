@@ -24,7 +24,6 @@
 
 html {
   scroll-behavior: smooth;
-  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -34,7 +33,6 @@ body {
   background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
   color: var(--pure-white);
   overflow-x: hidden;
-  height: 100%;
   margin: 0;
   padding: 0;
 }

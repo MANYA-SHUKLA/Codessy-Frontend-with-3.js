@@ -37,7 +37,7 @@ export default function Home() {
   const heroOpacity = useTransform(heroProgress, [0, 0.5, 1], [1, 0.8, 0]);
 
   return (
-    <main ref={containerRef} className="relative overflow-hidden w-full">
+    <main ref={containerRef} className="relative w-full">
       {/* Navbar */}
       <Navbar />
       
