@@ -141,6 +141,14 @@ export default function TechStack() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
               viewport={{ once: true, amount: 0.8 }}
+              animate={{
+                textShadow: [
+                  "0 0 0px rgba(255,255,255,0)",
+                  "0 0 10px rgba(97, 218, 251, 0.5)",
+                  "0 0 20px rgba(2, 86, 155, 0.5)",
+                  "0 0 0px rgba(255,255,255,0)"
+                ]
+              }}
             >
               Divine Technology Stack
             </motion.h2>
