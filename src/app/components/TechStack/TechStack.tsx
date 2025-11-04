@@ -269,73 +269,72 @@ export default function TechStack() {
           </motion.div>
         </div>
 
-        <ScrollReveal direction="up" delay={0.4}>
-          <motion.div
-            className={styles.features}
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
+        <motion.div
+          className={styles.features}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <motion.div 
+            className={styles.feature}
+            variants={itemVariants}
+            whileHover={{ y: -5, scale: 1.05 }}
           >
-            <motion.div 
-              className={styles.feature}
-              variants={itemVariants}
-              whileHover={{ y: -5, scale: 1.05 }}
+            <motion.div
+              animate={{ 
+                scale: [1, 1.2, 1],
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity 
+              }}
             >
-              <motion.div
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity 
-                }}
-              >
-                <Zap className={styles.featureIcon} />
-              </motion.div>
-              <h4>Lightning Fast</h4>
-              <p>Optimized performance with modern build tools</p>
+              <Zap className={styles.featureIcon} />
             </motion.div>
-            <motion.div 
-              className={styles.feature}
-              variants={itemVariants}
-              whileHover={{ y: -5, scale: 1.05 }}
-            >
-              <motion.div
-                animate={{ 
-                  rotate: [0, 10, -10, 0],
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity 
-                }}
-              >
-                <Shield className={styles.featureIcon} />
-              </motion.div>
-              <h4>Secure & Scalable</h4>
-              <p>Enterprise-grade security and scalability</p>
-            </motion.div>
-            <motion.div 
-              className={styles.feature}
-              variants={itemVariants}
-              whileHover={{ y: -5, scale: 1.05 }}
-            >
-              <motion.div
-                animate={{ 
-                  y: [0, -5, 0],
-                }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity,
-                  delay: 1
-                }}
-              >
-                <Database className={styles.featureIcon} />
-              </motion.div>
-              <h4>Modern Databases</h4>
-              <p>Efficient data management with latest technologies</p>
-            </motion.div>
+            <h4>Lightning Fast</h4>
+            <p>Optimized performance with modern build tools</p>
           </motion.div>
-        </ScrollReveal>
+          <motion.div 
+            className={styles.feature}
+            variants={itemVariants}
+            whileHover={{ y: -5, scale: 1.05 }}
+          >
+            <motion.div
+              animate={{ 
+                rotate: [0, 10, -10, 0],
+              }}
+              transition={{ 
+                duration: 3, 
+                repeat: Infinity 
+              }}
+            >
+              <Shield className={styles.featureIcon} />
+            </motion.div>
+            <h4>Secure & Scalable</h4>
+            <p>Enterprise-grade security and scalability</p>
+          </motion.div>
+          <motion.div 
+            className={styles.feature}
+            variants={itemVariants}
+            whileHover={{ y: -5, scale: 1.05 }}
+          >
+            <motion.div
+              animate={{ 
+                y: [0, -5, 0],
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                delay: 1
+              }}
+            >
+              <Database className={styles.featureIcon} />
+            </motion.div>
+            <h4>Modern Databases</h4>
+            <p>Efficient data management with latest technologies</p>
+          </motion.div>
+        </motion.div>
       </div>
     </AnimatedSection>
   );
