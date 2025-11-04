@@ -439,7 +439,7 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Animated Background Elements */}
+     
       <div className={styles.backgroundElements}>
         <motion.div
           className={styles.bgElement1}
