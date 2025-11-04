@@ -19,7 +19,6 @@
     radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
 }
 
-/* Subtle dark overlay to match Hero visibility and improve contrast */
 .contact::after {
   content: '';
   position: absolute;
@@ -37,7 +36,7 @@
   z-index: 1;
 }
 
-/* Subtle backdrop only behind content */
+
 .container::before {
   content: '';
   position: absolute;
@@ -362,7 +361,7 @@
     align-self: center;
   }
 }
-/* Add to existing Contact.module.css */
+
 
 .backgroundElements {
   position: absolute;
