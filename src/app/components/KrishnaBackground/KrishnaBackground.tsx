@@ -5,7 +5,7 @@ import { Points, PointMaterial, Sphere } from '@react-three/drei';
 import * as THREE from 'three';
 import * as random from 'maath/random';
 
-// Performance Monitor Component
+
 function PerformanceMonitor() {
   const { gl } = useThree();
   const frameCount = useRef(0);
@@ -14,16 +14,16 @@ function PerformanceMonitor() {
   useFrame(() => {
     frameCount.current++;
     
-    // Limit frame rate to 30fps for background to save performance
+
     const currentTime = performance.now();
-    if (currentTime - lastTime.current < 33) { // ~30fps
+    if (currentTime - lastTime.current < 33) { 
       return;
     }
     lastTime.current = currentTime;
   });
 
   useEffect(() => {
-    // Enable antialiasing only for high-performance devices
+ 
     const canvas = gl.domElement;
     const context = canvas.getContext('webgl2') || canvas.getContext('webgl');
     
@@ -32,7 +32,7 @@ function PerformanceMonitor() {
       if (debugInfo) {
         const renderer = context.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
         
-        // Reduce quality for low-end devices
+      
         if (renderer.includes('Intel') || renderer.includes('Integrated')) {
           gl.setPixelRatio(1);
         } else {
@@ -45,7 +45,6 @@ function PerformanceMonitor() {
   return null;
 }
 
-// Floating Particles Component
 function FloatingParticles() {
   const pointsRef = useRef<any>(null);
   const sphere = useMemo(() => random.inSphere(new Float32Array(1500), { radius: 3 }) as Float32Array, []);
@@ -55,7 +54,7 @@ function FloatingParticles() {
       pointsRef.current.rotation.x -= delta / 10;
       pointsRef.current.rotation.y -= delta / 15;
       
-      // Pulsating scale effect
+    
       pointsRef.current.scale.x = 1 + Math.sin(state.clock.elapsedTime) * 0.1;
       pointsRef.current.scale.y = 1 + Math.sin(state.clock.elapsedTime) * 0.1;
       pointsRef.current.scale.z = 1 + Math.sin(state.clock.elapsedTime) * 0.1;
@@ -76,7 +75,7 @@ function FloatingParticles() {
   );
 }
 
-// Divine Orbs Component
+
 function DivineOrbs() {
   const orbsRef = useRef<any[]>([]);
   
@@ -129,7 +128,7 @@ function DivineOrbs() {
   );
 }
 
-// Flute Notes Component
+
 function FluteNotes() {
   const notesRef = useRef<any[]>([]);
   
@@ -152,11 +151,11 @@ function FluteNotes() {
         note.position.y = notes[i].position[1] + Math.sin(time * 2) * 0.3;
         note.rotation.z = time * 1.5;
         
-        // Breathing scale effect
+        
         const scale = notes[i].scale * (0.8 + Math.sin(time * 3) * 0.2);
         note.scale.set(scale, scale, scale);
         
-        // Fade in and out
+
         note.material.opacity = 0.3 + Math.sin(time * 2) * 0.3;
       }
     });
@@ -184,7 +183,7 @@ function FluteNotes() {
   );
 }
 
-// Peacock Feather Component
+
 function PeacockFeather() {
   const featherRef = useRef<any>(null);
   
@@ -194,20 +193,19 @@ function PeacockFeather() {
       featherRef.current.rotation.y = time * 0.2;
       featherRef.current.rotation.x = Math.sin(time * 0.5) * 0.1;
       
-      // Gentle floating motion
+
       featherRef.current.position.y = Math.sin(time * 0.3) * 0.2;
     }
   });
 
   return (
     <group ref={featherRef} position={[0, 0, -2]}>
-      {/* Main feather stem */}
+  
       <mesh position={[0, 0, 0]}>
         <cylinderGeometry args={[0.015, 0.015, 1.5, 6]} />
         <meshBasicMaterial color="#059669" toneMapped={false} />
       </mesh>
-      
-      {/* Feather eye patterns - reduced count for performance */}
+
       {Array.from({ length: 6 }, (_, i) => (
         <mesh key={i} position={[0, 0.6 - (i * 0.15), 0.08]}>
           <ringGeometry args={[0.08, 0.12, 12]} />
