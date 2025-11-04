@@ -14,7 +14,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      // Update active section based on scroll position
+
       const sections = ['hero', 'vision', 'mission', 'tech', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
@@ -104,7 +104,7 @@ export default function Navbar() {
         animate="visible"
         variants={containerVariants}
       >
-        {/* Background Elements */}
+   
         <div className={styles.background}>
           <motion.div
             className={styles.navOrb1}
@@ -134,7 +134,7 @@ export default function Navbar() {
         </div>
 
         <div className={styles.container}>
-          {/* Logo */}
+       
           <motion.div
             className={styles.logo}
             variants={itemVariants}
@@ -166,7 +166,7 @@ export default function Navbar() {
             </SmoothScrollLink>
           </motion.div>
 
-          {/* Desktop Navigation */}
+
           <motion.div 
             className={styles.desktopNav}
             variants={containerVariants}
@@ -202,7 +202,7 @@ export default function Navbar() {
             ))}
           </motion.div>
 
-          {/* CTA Button */}
+      
           <motion.div
             className={styles.ctaContainer}
             variants={itemVariants}
@@ -221,7 +221,7 @@ export default function Navbar() {
             </SmoothScrollLink>
           </motion.div>
 
-          {/* Mobile Menu Button */}
+ 
           <motion.button
             className={styles.mobileMenuButton}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -256,11 +256,11 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu Overlay */}
+   
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
-            {/* Backdrop */}
+     
             <motion.div
               className={styles.mobileBackdrop}
               initial={{ opacity: 0 }}
@@ -269,7 +269,7 @@ export default function Navbar() {
               onClick={closeMobileMenu}
             />
             
-            {/* Mobile Menu */}
+
             <motion.div
               className={styles.mobileMenu}
               variants={mobileMenuVariants}
@@ -277,7 +277,7 @@ export default function Navbar() {
               animate="open"
               exit="closed"
             >
-              {/* Mobile Menu Background */}
+
               <div className={styles.mobileBackground}>
                 <motion.div
                   className={styles.mobileOrb1}
@@ -306,7 +306,7 @@ export default function Navbar() {
                 />
               </div>
 
-              {/* Mobile Logo */}
+            
               <motion.div
                 className={styles.mobileLogo}
                 variants={mobileItemVariants}
@@ -329,7 +329,7 @@ export default function Navbar() {
                 </div>
               </motion.div>
 
-              {/* Mobile Navigation Items */}
+
               <motion.div 
                 className={styles.mobileNavItems}
                 variants={containerVariants}
@@ -366,7 +366,7 @@ export default function Navbar() {
                 ))}
               </motion.div>
 
-              {/* Mobile CTA Button */}
+           
               <motion.div
                 className={styles.mobileCtaContainer}
                 variants={mobileItemVariants}
@@ -385,7 +385,7 @@ export default function Navbar() {
                 </SmoothScrollLink>
               </motion.div>
 
-              {/* Mobile Footer */}
+
               <motion.div
                 className={styles.mobileFooter}
                 variants={mobileItemVariants}
