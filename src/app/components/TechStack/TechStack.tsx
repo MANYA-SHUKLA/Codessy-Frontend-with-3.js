@@ -1,7 +1,7 @@
 'use client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Database, Smartphone, Globe, Cpu, Zap, Shield } from 'lucide-react';
+import { Database, Smartphone, Globe, Cpu, Zap, Shield, Brain, Rocket } from 'lucide-react';
 import AnimatedSection from '../UI/AnimatedSection';
 import ScrollReveal from '../UI/ScrollReveal';
 import styles from './TechStack.module.css';
@@ -47,6 +47,45 @@ export default function TechStack() {
         { name: 'AWS', level: 70, icon: '☁️' },
         { name: 'Firebase', level: 82, icon: '🔥' },
         { name: 'GraphQL', level: 78, icon: '📊' }
+      ]
+    },
+    database: {
+      name: 'Database & Storage',
+      icon: <Database className={styles.categoryIcon} />,
+      color: '#336791',
+      technologies: [
+        { name: 'MongoDB', level: 80, icon: '🍃' },
+        { name: 'Redis', level: 75, icon: '🔴' },
+        { name: 'MySQL', level: 78, icon: '🐬' },
+        { name: 'Elasticsearch', level: 72, icon: '🔍' },
+        { name: 'Supabase', level: 76, icon: '⚡' },
+        { name: 'DynamoDB', level: 70, icon: '⚡' }
+      ]
+    },
+    ai: {
+      name: 'AI & Machine Learning',
+      icon: <Brain className={styles.categoryIcon} />,
+      color: '#10a37f',
+      technologies: [
+        { name: 'TensorFlow', level: 75, icon: '🧠' },
+        { name: 'PyTorch', level: 78, icon: '🔥' },
+        { name: 'OpenAI API', level: 82, icon: '🤖' },
+        { name: 'LangChain', level: 76, icon: '⛓️' },
+        { name: 'Hugging Face', level: 74, icon: '🤗' },
+        { name: 'Scikit-learn', level: 80, icon: '📊' }
+      ]
+    },
+    deployment: {
+      name: 'Deployment & DevOps',
+      icon: <Rocket className={styles.categoryIcon} />,
+      color: '#7e57c2',
+      technologies: [
+        { name: 'Kubernetes', level: 72, icon: '⚓' },
+        { name: 'GitHub Actions', level: 80, icon: '⚡' },
+        { name: 'Terraform', level: 70, icon: '🏗️' },
+        { name: 'Jenkins', level: 68, icon: '🤖' },
+        { name: 'Vercel', level: 85, icon: '▲' },
+        { name: 'Netlify', level: 82, icon: '🌐' }
       ]
     }
   };
