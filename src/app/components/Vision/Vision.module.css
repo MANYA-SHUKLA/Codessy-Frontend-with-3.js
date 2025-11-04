@@ -1,0 +1,282 @@
+.vision {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 0;
+  position: relative;
+}
+
+.vision::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 10% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 90% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%);
+}
+
+/* Subtle dark overlay to match Hero visibility and improve contrast */
+.vision::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.4); /* deepen overlay for better contrast */
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Subtle backdrop only behind content */
+.container::before {
+  content: '';
+  position: absolute;
+  inset: 0 1rem; /* leave a small edge to reveal section background */
+  border-radius: 24px;
+  background: rgba(2, 6, 23, 0.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-family: var(--font-playfair);
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #d4af37 0%, #fbbf24 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+.divider {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(135deg, #d4af37 0%, #fbbf24 100%);
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+}
+
+.lead {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.highlight {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+.pointsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.pointCard {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pointCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #d4af37 0%, #fbbf24 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.pointCard:hover::before {
+  transform: scaleX(1);
+}
+
+.pointCard:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pointHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.iconWrapper {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #d4af37 0%, #fbbf24 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pointIcon {
+  width: 2rem;
+  height: 2rem;
+  color: #0f172a;
+}
+
+.pointTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.pointDescription {
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.quote {
+  text-align: center;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.quoteIcon {
+  font-size: 4rem;
+  color: #d4af37;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.quoteText {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #e2e8f0;
+  margin: 0;
+  font-family: var(--font-playfair);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .lead {
+    font-size: 1.1rem;
+  }
+  
+  .pointsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pointHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .quoteText {
+    font-size: 1.2rem;
+  }
+}
+/* Add to existing Vision.module.css */
+
+.arrow {
+  color: #d4af37;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.pointCard:hover .arrow {
+  opacity: 1;
+}
+
+.hoverLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(135deg, #d4af37 0%, #fbbf24 100%);
+  transform-origin: left;
+}
+
+.backgroundElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bgOrb1 {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+.bgOrb2 {
+  position: absolute;
+  bottom: 30%;
+  left: 5%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(25px);
+}
+
+/* Mobile responsive additions */
+@media (max-width: 768px) {
+  .pointHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .bgOrb1,
+  .bgOrb2 {
+    transform: scale(0.6);
+  }
+}

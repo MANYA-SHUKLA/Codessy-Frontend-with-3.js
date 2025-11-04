@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Krishna Color Scheme */
+  --krishna-blue: #1e40af;
+  --krishna-dark-blue: #1e3a8a;
+  --divine-gold: #d4af37;
+  --sacred-gold: #fbbf24;
+  --royal-purple: #8b5cf6;
+  --divine-purple: #7c3aed;
+  --sacred-green: #059669;
+  --enlightened-green: #10b981;
+  --pure-white: #ffffff;
+  --dark-bg: #0f172a;
+  --darker-bg: #020617;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+  color: var(--pure-white);
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Krishna Theme Background */
+.krishna-theme {
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(30, 64, 175, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(212, 175, 55, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 80%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+    linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--divine-gold) 0%, var(--royal-purple) 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--sacred-gold) 0%, var(--divine-purple) 100%);
+}
+
+/* Krishna Theme Animations */
+@keyframes divine-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(-5px) rotate(240deg);
+  }
+}
+
+@keyframes sacred-glow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+    filter: blur(40px);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+    filter: blur(30px);
+  }
+}
+
+@keyframes flute-notes {
+  0% {
+    transform: translateY(100vh) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes chakra-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lotus-bloom {
+  0% {
+    transform: scale(0.8) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8) rotate(360deg);
+    opacity: 0.7;
+  }
+}
+
+/* Animation Classes */
+.animate-divine-float {
+  animation: divine-float 6s ease-in-out infinite;
+}
+
+.animate-sacred-glow {
+  animation: sacred-glow 4s ease-in-out infinite;
+}
+
+.animate-flute-notes {
+  animation: flute-notes 6s linear infinite;
+}
+
+.animate-chakra-spin {
+  animation: chakra-spin 3s linear infinite;
+}
+
+.animate-lotus-bloom {
+  animation: lotus-bloom 8s ease-in-out infinite;
+}
+
+/* Framer Motion Enhanced Styles */
+.motion-divine {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.motion-sacred {
+  background: linear-gradient(135deg, var(--divine-gold) 0%, var(--royal-purple) 100%);
+}
+
+.motion-enlightened {
+  background: linear-gradient(135deg, var(--sacred-green) 0%, var(--enlightened-green) 100%);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .mobile-optimized {
+    transform: none !important;
+    animation: none !important;
+  }
+  
+  .mobile-padding {
+    padding: 1rem !important;
+  }
+  
+  .mobile-text-center {
+    text-align: center !important;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+  :root {
+    --divine-gold: #ffd700;
+    --royal-purple: #8a2be2;
+    --sacred-green: #008000;
+  }
+}
+
+/* Performance Optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Main container styling */
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hide background animations below viewport */
+@supports (animation-timeline: view()) {
+  main {
+    animation-timeline: view();
+  }
+}
+
+/* Prevent scroll beyond content */
+html, body, #__next {
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Add padding to account for fixed navbar */
+html {
+  scroll-padding-top: 80px;
+}
+
+/* Ensure content doesn't hide behind navbar */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile navbar spacing */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+  
+  section {
+    scroll-margin-top: 70px;
+  }
+}
