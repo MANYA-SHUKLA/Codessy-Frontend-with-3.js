@@ -223,7 +223,7 @@ export default function Mission() {
               />
             </motion.div>
 
-            {/* Krishna Visual Element */}
+       
             <motion.div 
               className={styles.krishnaSection}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -263,7 +263,7 @@ export default function Mission() {
               </div>
             </motion.div>
 
-            {/* Floating Elements */}
+    
             <motion.div
               className={styles.floatingDot1}
               animate={{
