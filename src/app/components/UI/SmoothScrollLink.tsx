@@ -15,10 +15,9 @@ export default function SmoothScrollLink({
   className = '',
   onClick 
 }: SmoothScrollLinkProps) {
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // If it's an external link or mailto/tel, don't prevent default
+
     if (href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tel')) {
-      return; // Allow default behavior for external links
+      return; 
     }
     
     e.preventDefault();
