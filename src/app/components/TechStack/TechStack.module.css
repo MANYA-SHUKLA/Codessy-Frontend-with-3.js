@@ -20,7 +20,7 @@
     radial-gradient(circle at 50% 50%, rgba(240, 81, 56, 0.15) 0%, transparent 50%);
 }
 
-/* Subtle dark overlay to match Hero visibility and improve contrast */
+
 .techStack::after {
   content: '';
   position: absolute;
@@ -38,7 +38,7 @@
   z-index: 1;
 }
 
-/* Subtle backdrop only behind content */
+
 .container::before {
   content: '';
   position: absolute;
