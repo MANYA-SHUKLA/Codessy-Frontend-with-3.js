@@ -283,7 +283,7 @@
   opacity: 0;
 }
 
-/* Mobile Responsive Design */
+
 @media (max-width: 968px) {
   .content {
     grid-template-columns: 1fr 1fr;
