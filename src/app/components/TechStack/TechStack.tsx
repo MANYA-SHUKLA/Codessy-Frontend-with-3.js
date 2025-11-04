@@ -94,12 +94,11 @@ export default function TechStack() {
   return (
     <AnimatedSection className={styles.techStack} id="tech">
       <div className={styles.container}>
-        <ScrollReveal direction="up" delay={0.1}>
           <div className={styles.header}>
             <motion.h2 
               className={styles.title}
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               Divine Technology Stack
@@ -107,19 +106,18 @@ export default function TechStack() {
             <motion.div 
               className={styles.divider}
               initial={{ width: 0 }}
-              whileInView={{ width: 100 }}
+              animate={{ width: 100 }}
               transition={{ duration: 1, delay: 0.3 }}
             />
             <motion.p 
               className={styles.lead}
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               Harnessing the power of modern technologies with the precision of Krishna's Sudarshan Chakra
             </motion.p>
           </div>
-        </ScrollReveal>
 
         <div className={styles.content}>
           <motion.div
