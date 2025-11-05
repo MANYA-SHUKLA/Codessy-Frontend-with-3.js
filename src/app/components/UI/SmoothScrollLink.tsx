@@ -15,7 +15,7 @@ export default function SmoothScrollLink({
   className = '',
   onClick 
 }: SmoothScrollLinkProps) {
-
+ const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tel')) {
       return; 
     }
